@@ -1,6 +1,6 @@
 const button = document.querySelector('.button');
 const jokeBox = document.querySelector('.jokes');
-const apiUrl = "http://localhost:3000/api/jokes";
+const apiUrl = "https://nothing123.onrender.com/api/jokes";
 
 const getjokes = async () => {
     console.log("fetching data...");
