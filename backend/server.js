@@ -1,13 +1,13 @@
 // require('dotenv').config();     because Node.js interprets all .js files as ES modules,we use import inside require
 import 'dotenv/config';        
 import express from 'express';
-// import cors from 'cors';   // you can use like all the request made for this api is accepted
+import cors from 'cors';   // you can use like all the request made for this api is accepted
 
 // import { createProxyMiddleware } from 'http-proxy-middleware'; 
 // Proxy middleware   If your frontend is running on http://localhost:8080 and backend on http://localhost:3000, the proxy middleware ensures that API requests made to /api from the frontend are forwarded to the backend.   protect form CORS policy(same damain and same port are required);
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const jokes = [{
         "id":1,
         "title":"A joke",
@@ -35,7 +35,7 @@ const jokes = [{
     }];
 
 //enable the cors for all router
-// app.use(cors());
+app.use(cors());
 
 // // creating proxy middleware
 // app.use(
